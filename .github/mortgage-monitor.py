@@ -2,6 +2,7 @@ import os
 import requests
 
 THRESHOLD = 4.25
+URL = 'https://api.api-ninjas.com/v1/mortgagerate'
 
 def get_refi_estimates():
   API_KEY = os.environ.get("NINJIA_API_KEY")
