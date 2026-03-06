@@ -4,6 +4,10 @@ import requests
 THRESHOLD = 4.25
 URL = 'https://api.api-ninjas.com/v1/mortgagerate'
 
+# 2. Industry Standard Adjustments (for 740+ FICO)
+REFY_PREMIUM = 0.15     # Refinances usually cost ~0.15% more than purchases
+JUMBO_SPREAD = 0.25     # Jumbo fixed is usually ~0.25% higher than conforming
+
 def get_refi_estimates():
   API_KEY = os.environ.get("NINJIA_API_KEY")
   response = requests.get(URL, headers={'X-Api-Key': API_KEY})
